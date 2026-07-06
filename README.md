@@ -12,8 +12,8 @@
 
 <br/><br/>
 
-<img src="https://komarev.com/ghpvc/?username=cdLutcifer&label=Profile%20Views&color=a78bfa&style=flat-square" alt="Profile views" />
-<img src="https://img.shields.io/github/followers/cdLutcifer?label=Followers&style=flat-square&color=a78bfa" alt="Followers" />
+<img src="https://komarev.com/ghpvc/?username=Mr-Jacoob&label=Profile%20Views&color=a78bfa&style=flat-square" alt="Profile views" />
+<img src="https://img.shields.io/github/followers/Mr-Jacoob?label=Followers&style=flat-square&color=a78bfa" alt="Followers" />
 
 </div>
 
@@ -35,8 +35,8 @@
 ## 🚀 Featured
 
 <div align="center">
-  <a href="https://github.com/cdLutcifer/my-portfolio">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=cdLutcifer&repo=my-portfolio&theme=tokyonight&hide_border=true" />
+  <a href="https://github.com/Mr-Jacoob/my-portfolio">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Mr-Jacoob&repo=my-portfolio&theme=tokyonight&hide_border=true" />
   </a>
   <br/>
   <sub>👆 the code behind <a href="https://ziyodullo.com">ziyodullo.com</a></sub>
@@ -45,18 +45,18 @@
 ## 📊 GitHub Stats
 
 <div align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=cdLutcifer&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=cdLutcifer&layout=compact&theme=tokyonight&hide_border=true" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=Mr-Jacoob&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Mr-Jacoob&layout=compact&theme=tokyonight&hide_border=true" />
   <br/><br/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=cdLutcifer&theme=tokyonight&hide_border=true" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Mr-Jacoob&theme=tokyonight&hide_border=true" />
 </div>
 
 ## 🐍 Contribution Snake
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/cdLutcifer/cdLutcifer/output/github-contribution-grid-snake-dark.svg" />
-    <img src="https://raw.githubusercontent.com/cdLutcifer/cdLutcifer/output/github-contribution-grid-snake.svg" alt="Contribution snake" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Mr-Jacoob/Mr-Jacoob/output/github-contribution-grid-snake-dark.svg" />
+    <img src="https://raw.githubusercontent.com/Mr-Jacoob/Mr-Jacoob/output/github-contribution-grid-snake.svg" alt="Contribution snake" />
   </picture>
 </div>
 
