@@ -1,4 +1,4 @@
-# Krea Kvest — tavsiya kartochkasi
+# Kreativ kvest — tavsiya kartochkasi
 
 Slaydga qo'yish uchun tayyor kartochka: https://krea-kvest.netlify.app/ havolasini tavsiya qiladi.
 

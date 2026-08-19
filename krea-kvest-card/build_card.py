@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the "Krea Kvest" recommendation card in Uzbek and Russian.
+"""Build the "Kreativ kvest" recommendation card in Uzbek and Russian.
 
 Produces, next to this script:
   card-uz.html / card-ru.html  - standalone card, sized exactly to the card box
@@ -48,14 +48,14 @@ def rebuild_qr() -> str:
 UZ = {
     "lang": "uz",
     "file": "card-uz.html",
-    "doc_title": "Krea Kvest — tavsiya kartochkasi",
+    "doc_title": "Kreativ kvest — tavsiya kartochkasi",
     "eyebrow": "Foydali havola",
     "headline_lead": "Men tavsiya qilaman",
-    "name": "Krea Kvest",
-    "preview_title": "Krea Kvest — interaktiv onlayn kvest",
+    "name": "Kreativ kvest",
+    "preview_title": "Kreativ kvest — interaktiv onlayn loyiha",
     "preview_desc": "To‘g‘ridan-to‘g‘ri brauzerda ochiladi: hech narsa yuklab olish "
     "ham, ro‘yxatdan o‘tish ham shart emas.",
-    "wordmark": "Krea Kvest",
+    "wordmark": "Kreativ kvest",
     "qr_hint": "QR-ni skaner qiling",
     "chips": ["Brauzerda ochiladi", "Yuklab olish shart emas", "Telefon va kompyuterda"],
 }
@@ -63,14 +63,14 @@ UZ = {
 RU = {
     "lang": "ru",
     "file": "card-ru.html",
-    "doc_title": "Krea Kvest — карточка-рекомендация",
+    "doc_title": "Kreativ kvest — карточка-рекомендация",
     "eyebrow": "Полезная ссылка",
     "headline_lead": "Рекомендую",
-    "name": "Krea Kvest",
-    "preview_title": "Krea Kvest — интерактивный онлайн-квест",
+    "name": "Kreativ kvest",
+    "preview_title": "Kreativ kvest — интерактивный онлайн-проект",
     "preview_desc": "Открывается прямо в браузере: ничего не нужно скачивать "
     "и не нужна регистрация.",
-    "wordmark": "Krea Kvest",
+    "wordmark": "Kreativ kvest",
     "qr_hint": "Отсканируйте QR",
     "chips": ["Работает в браузере", "Ничего не скачивать", "Телефон и компьютер"],
 }
@@ -490,7 +490,7 @@ code {
 footer { color: var(--fg-muted); font-size: 14px; border-top: 1px solid var(--edge); padding-top: 20px; }
 """
 
-PAGE = """<title>Krea Kvest tavsiya kartochkasi</title>
+PAGE = """<title>Kreativ kvest tavsiya kartochkasi</title>
 {fonts}
 <style>
 {page_css}
@@ -500,7 +500,7 @@ PAGE = """<title>Krea Kvest tavsiya kartochkasi</title>
 <div class="wrap">
   <header>
     <p class="kicker">Slayd uchun tayyor grafika</p>
-    <h1>Krea Kvest tavsiya kartochkasi</h1>
+    <h1>Kreativ kvest tavsiya kartochkasi</h1>
     <p class="lede">
       Slaydning chap tomonidagi «Рекомендую» kartochkasi asosida qayta ishlangan —
       lekin bu safar tavsiya qilinadigan havola
