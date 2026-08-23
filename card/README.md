@@ -5,15 +5,16 @@
 
 ## Как изменить данные
 
-Открой `index.html`, найди блок `const CARD = { ... }` в конце файла и замени значения:
+Все контакты уже заполнены. Если что-то поменяется — открой `index.html`,
+найди блок `const CARD = { ... }` в конце файла и поправь значение:
 
 | Поле | Что это |
 |---|---|
 | `phoneRaw` / `phoneDisplay` | номер для кнопки «Позвонить» и для показа на экране |
-| `telegram` | ссылка вида `https://t.me/твой_ник` |
-| `instagram` | ссылка вида `https://instagram.com/твой_ник` |
-| `revolut` | ссылка вида `https://revolut.me/твой_тег` |
-| `email`, `site`, `github` | уже заполнены |
+| `telegram` | `https://t.me/stephn_jons` |
+| `instagram` | `https://instagram.com/rahmonjonov.zdl` |
+| `revolut` | `https://revolut.me/ziyodullorahmon` |
+| `email`, `site`, `github` | почта, ziyodullo.com, @Mr-Jacoob |
 
 Больше нигде править ничего не нужно — заголовки, иконки и ссылки подставляются сами.
 
