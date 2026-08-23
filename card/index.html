@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Jacob — Creative Developer</title>
 <meta name="description" content="Цифровая визитка Jacob (Ziyodullo Rahmonjonov) — creative developer. Телефон, сайт, соцсети и Revolut." />
-<meta name="theme-color" content="#0d0e1a" />
+<meta name="theme-color" content="#0b0c16" />
 
 <meta property="og:type" content="profile" />
 <meta property="og:title" content="Jacob — Creative Developer" />
@@ -22,7 +22,6 @@
 <style>
   :root{
     --bg:#0b0c16;
-    --bg-2:#11132250;
     --card:rgba(22,24,40,.62);
     --stroke:rgba(255,255,255,.09);
     --stroke-2:rgba(255,255,255,.16);
@@ -30,15 +29,15 @@
     --muted:#9aa0bd;
     --accent:#a78bfa;
     --accent-2:#7dd3fc;
-    --revolut:#1f6fff;
-    --radius:22px;
-    --shadow:0 30px 80px -30px rgba(0,0,0,.9);
+    --radius:20px;
+    --shadow:0 26px 70px -30px rgba(0,0,0,.9);
   }
 
   *{box-sizing:border-box}
-  html,body{height:100%}
+  html{height:100%}
   body{
     margin:0;
+    min-height:100svh;
     background:var(--bg);
     color:var(--text);
     font-family:"Sora",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
@@ -46,12 +45,12 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:28px 16px calc(28px + env(safe-area-inset-bottom));
+    padding:max(12px,env(safe-area-inset-top)) 14px max(12px,env(safe-area-inset-bottom));
     overflow-x:hidden;
   }
 
-  /* ── фон: аврора ── */
-  .aurora{position:fixed;inset:-20vmax;z-index:-2;filter:blur(70px);opacity:.75;pointer-events:none}
+  /* ── фон ── */
+  .aurora{position:fixed;inset:-20vmax;z-index:-2;filter:blur(70px);opacity:.7;pointer-events:none}
   .blob{position:absolute;border-radius:50%;mix-blend-mode:screen;animation:drift 22s ease-in-out infinite}
   .b1{width:52vmax;height:52vmax;left:-8vmax;top:-6vmax;background:radial-gradient(circle at 30% 30%,#7c3aed,transparent 62%)}
   .b2{width:46vmax;height:46vmax;right:-10vmax;top:6vmax;background:radial-gradient(circle at 60% 40%,#0ea5e9,transparent 62%);animation-delay:-7s}
@@ -63,26 +62,25 @@
   }
   .grid{
     position:fixed;inset:0;z-index:-1;pointer-events:none;
-    background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
-                     linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+    background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+                     linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
     background-size:44px 44px;
-    mask-image:radial-gradient(circle at 50% 30%,#000 10%,transparent 72%);
-    -webkit-mask-image:radial-gradient(circle at 50% 30%,#000 10%,transparent 72%);
+    mask-image:radial-gradient(circle at 50% 40%,#000 8%,transparent 70%);
+    -webkit-mask-image:radial-gradient(circle at 50% 40%,#000 8%,transparent 70%);
   }
 
   /* ── карточка ── */
   .card{
-    width:100%;max-width:420px;
+    width:100%;max-width:380px;
     background:var(--card);
     border:1px solid var(--stroke);
     border-radius:var(--radius);
     box-shadow:var(--shadow);
-    backdrop-filter:blur(22px) saturate(140%);
-    -webkit-backdrop-filter:blur(22px) saturate(140%);
-    padding:30px 22px 22px;
+    backdrop-filter:blur(20px) saturate(140%);
+    -webkit-backdrop-filter:blur(20px) saturate(140%);
+    padding:18px 16px 14px;
     position:relative;
-    overflow:hidden;
-    animation:rise .7s cubic-bezier(.2,.7,.2,1) both;
+    animation:rise .6s cubic-bezier(.2,.7,.2,1) both;
   }
   .card::before{
     content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;
@@ -90,119 +88,122 @@
     -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
     -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;
   }
-  @keyframes rise{from{opacity:0;transform:translateY(22px) scale(.98)}to{opacity:1;transform:none}}
+  @keyframes rise{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
 
-  /* ── шапка ── */
-  .head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
-  .avatar-wrap{position:relative;width:104px;height:104px}
+  /* ── шапка: аватар слева, текст справа ── */
+  .head{display:flex;align-items:center;gap:13px}
+  .avatar-wrap{position:relative;width:60px;height:60px;flex:none}
   .avatar-wrap::after{
-    content:"";position:absolute;inset:-6px;border-radius:50%;
+    content:"";position:absolute;inset:-4px;border-radius:50%;
     background:conic-gradient(from 0deg,var(--accent),var(--accent-2),#ec4899,var(--accent));
-    animation:spin 6s linear infinite;z-index:0;filter:blur(6px);opacity:.85;
+    animation:spin 6s linear infinite;z-index:0;filter:blur(5px);opacity:.85;
   }
   @keyframes spin{to{transform:rotate(360deg)}}
   .avatar{
-    position:relative;z-index:1;width:104px;height:104px;border-radius:50%;
-    object-fit:cover;border:3px solid #12131f;background:#12131f;display:block;
+    position:relative;z-index:1;width:60px;height:60px;border-radius:50%;
+    object-fit:cover;border:2px solid #12131f;background:#12131f;display:block;
   }
   .status{
-    position:absolute;z-index:2;right:2px;bottom:2px;
-    width:20px;height:20px;border-radius:50%;background:#34d399;border:3px solid #12131f;
+    position:absolute;z-index:2;right:0;bottom:0;
+    width:14px;height:14px;border-radius:50%;background:#34d399;border:2px solid #12131f;
     box-shadow:0 0 0 0 rgba(52,211,153,.6);animation:pulse 2.2s infinite;
   }
-  @keyframes pulse{70%{box-shadow:0 0 0 12px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+  @keyframes pulse{70%{box-shadow:0 0 0 9px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
 
-  h1{margin:0;font-size:26px;letter-spacing:-.02em;font-weight:700}
+  .id{min-width:0}
+  h1{margin:0;font-size:20px;line-height:1.15;letter-spacing:-.02em;font-weight:700}
   .role{
-    margin:0;font-family:"JetBrains Mono",ui-monospace,monospace;font-size:13px;
-    color:var(--accent);letter-spacing:.02em;
+    margin:2px 0 0;font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11.5px;
+    color:var(--accent);
   }
-  .bio{margin:2px 0 0;font-size:13.5px;line-height:1.55;color:var(--muted);max-width:32ch}
+  .bio{margin:4px 0 0;font-size:11.5px;line-height:1.4;color:var(--muted)}
 
-  .tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:4px}
-  .tag{
-    font-size:11px;font-family:"JetBrains Mono",monospace;color:#c9cbe4;
-    border:1px solid var(--stroke-2);border-radius:999px;padding:4px 9px;background:rgba(255,255,255,.04);
+  /* ── строка с телефоном ── */
+  .phone-row{
+    display:flex;align-items:center;gap:8px;margin-top:12px;
+    padding:9px 12px;border-radius:13px;
+    background:rgba(255,255,255,.045);border:1px solid var(--stroke);
   }
+  .phone-row a{
+    flex:1;min-width:0;text-decoration:none;color:var(--text);
+    font-family:"JetBrains Mono",monospace;font-size:14px;font-weight:500;letter-spacing:.01em;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .phone-row .pico{width:16px;height:16px;flex:none;color:var(--accent)}
+  .copy{
+    flex:none;border:0;background:transparent;color:var(--muted);cursor:pointer;
+    padding:5px;border-radius:8px;transition:color .15s,background .15s;line-height:0;
+  }
+  .copy:hover{color:var(--text);background:rgba(255,255,255,.08)}
+  .copy svg{width:15px;height:15px;display:block}
 
-  hr.sep{border:0;height:1px;background:linear-gradient(90deg,transparent,var(--stroke-2),transparent);margin:22px 0 18px}
-
-  /* ── основные кнопки ── */
-  .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  /* ── главные кнопки ── */
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
   .btn{
-    display:flex;align-items:center;justify-content:center;gap:8px;
-    text-decoration:none;color:var(--text);font-size:14px;font-weight:600;
-    padding:13px 12px;border-radius:14px;border:1px solid var(--stroke-2);
-    background:rgba(255,255,255,.05);
+    display:flex;align-items:center;justify-content:center;gap:7px;
+    text-decoration:none;color:var(--text);font-size:13.5px;font-weight:600;font-family:inherit;
+    padding:11px 10px;border-radius:13px;border:1px solid var(--stroke-2);
+    background:rgba(255,255,255,.05);cursor:pointer;
     transition:transform .18s ease,background .18s ease,border-color .18s ease,box-shadow .18s ease;
-    cursor:pointer;font-family:inherit;
   }
   .btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.28)}
   .btn:active{transform:translateY(0)}
-  .btn svg{width:18px;height:18px;flex:none}
-  .btn.call{background:linear-gradient(135deg,#7c3aed,#a78bfa);border-color:transparent;color:#fff;box-shadow:0 12px 30px -14px #7c3aed}
-  .btn.call:hover{box-shadow:0 16px 36px -12px #7c3aed}
+  .btn svg{width:17px;height:17px;flex:none}
+  .btn.call{background:linear-gradient(135deg,#7c3aed,#a78bfa);border-color:transparent;color:#fff;box-shadow:0 10px 24px -14px #7c3aed}
   .btn.revolut{
     grid-column:1 / -1;background:linear-gradient(135deg,#0b5bd3,#2b7fff);
-    border-color:transparent;color:#fff;box-shadow:0 12px 30px -14px var(--revolut);
+    border-color:transparent;color:#fff;box-shadow:0 10px 26px -14px #1f6fff;
   }
-  .btn.revolut:hover{box-shadow:0 16px 36px -12px var(--revolut)}
-  .btn.revolut small{display:block;font-weight:400;font-size:11px;opacity:.85}
 
-  /* ── список ссылок ── */
-  .links{display:flex;flex-direction:column;gap:8px;margin-top:14px}
-  .link{
-    display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);
-    padding:11px 13px;border-radius:14px;border:1px solid transparent;
-    background:rgba(255,255,255,.035);
+  /* ── соцсети: плитки ── */
+  .socials{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
+  .tile{
+    display:flex;flex-direction:column;align-items:center;gap:5px;
+    text-decoration:none;color:var(--text);
+    padding:10px 4px 8px;border-radius:13px;
+    background:rgba(255,255,255,.04);border:1px solid transparent;
     transition:transform .16s ease,background .16s ease,border-color .16s ease;
   }
-  .link:hover{background:rgba(255,255,255,.08);border-color:var(--stroke-2);transform:translateX(3px)}
-  .ico{
-    width:36px;height:36px;flex:none;border-radius:11px;display:grid;place-items:center;
-    background:rgba(167,139,250,.14);color:var(--accent);
-  }
-  .ico svg{width:19px;height:19px}
-  .ico.tg{background:rgba(41,171,226,.16);color:#4fc3f7}
-  .ico.ig{background:linear-gradient(135deg,rgba(245,133,41,.22),rgba(221,42,123,.22),rgba(129,52,175,.22));color:#f472b6}
-  .ico.gh{background:rgba(255,255,255,.1);color:#e9e9f4}
-  .ico.ml{background:rgba(52,211,153,.14);color:#34d399}
-  .meta{min-width:0;flex:1}
-  .meta b{display:block;font-size:14px;font-weight:600}
-  .meta span{display:block;font-size:12px;color:var(--muted);font-family:"JetBrains Mono",monospace;
-    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .copy{
-    flex:none;border:0;background:transparent;color:var(--muted);cursor:pointer;
-    padding:6px;border-radius:8px;transition:color .15s,background .15s;
-  }
-  .copy:hover{color:var(--text);background:rgba(255,255,255,.08)}
-  .copy svg{width:16px;height:16px;display:block}
+  .tile:hover{transform:translateY(-2px);background:rgba(255,255,255,.085);border-color:var(--stroke-2)}
+  .tile svg{width:19px;height:19px}
+  .tile b{font-size:9.5px;font-weight:500;color:var(--muted);letter-spacing:.01em}
+  .tile.site svg{color:var(--accent)}
+  .tile.ig svg{color:#f472b6}
+  .tile.gh svg{color:#e9e9f4}
+  .tile.ml svg{color:#34d399}
 
   /* ── низ ── */
-  .foot{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+  .foot{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
   .ghost{
-    display:flex;align-items:center;justify-content:center;gap:8px;font-family:inherit;
-    font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;
-    padding:12px;border-radius:14px;border:1px dashed var(--stroke-2);background:transparent;
+    display:flex;align-items:center;justify-content:center;gap:6px;font-family:inherit;
+    font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;
+    padding:9px;border-radius:12px;border:1px dashed var(--stroke-2);background:transparent;
     text-decoration:none;transition:color .16s,border-color .16s,background .16s;
   }
   .ghost:hover{color:var(--text);border-color:rgba(255,255,255,.32);background:rgba(255,255,255,.04)}
-  .ghost svg{width:16px;height:16px}
-  .sig{margin:16px 0 0;text-align:center;font-size:11px;color:#5f6484;font-family:"JetBrains Mono",monospace}
+  .ghost svg{width:14px;height:14px}
+  .sig{margin:11px 0 0;text-align:center;font-size:10px;color:#5f6484;font-family:"JetBrains Mono",monospace}
 
   /* ── тост ── */
   .toast{
-    position:fixed;left:50%;bottom:26px;transform:translate(-50%,24px);
+    position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));transform:translate(-50%,20px);
     background:rgba(20,22,36,.95);border:1px solid var(--stroke-2);color:var(--text);
-    padding:11px 18px;border-radius:999px;font-size:13px;font-weight:600;
+    padding:9px 16px;border-radius:999px;font-size:12.5px;font-weight:600;
     box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.28s ease;z-index:50;
     backdrop-filter:blur(10px);
   }
   .toast.show{opacity:1;transform:translate(-50%,0)}
 
-  @media (max-width:380px){
-    .card{padding:26px 16px 18px}
-    h1{font-size:23px}
+  /* ── совсем низкие экраны: убираем лишнее ── */
+  @media (max-height:620px){
+    .bio{display:none}
+    .sig{display:none}
+    .card{padding:15px 14px 12px}
+    .avatar-wrap,.avatar{width:52px;height:52px}
+    h1{font-size:18px}
+  }
+  @media (max-width:340px){
+    .socials{grid-template-columns:repeat(2,1fr)}
     .actions{grid-template-columns:1fr}
   }
   @media (prefers-reduced-motion:reduce){
@@ -220,21 +221,23 @@
 <main class="card">
   <header class="head">
     <div class="avatar-wrap">
-      <img class="avatar" src="https://github.com/Mr-Jacoob.png?size=220" alt="Jacob" />
+      <img class="avatar" src="https://github.com/Mr-Jacoob.png?size=160" alt="Jacob" />
       <span class="status" title="Открыт к проектам"></span>
     </div>
-    <div>
+    <div class="id">
       <h1 id="c-name">Jacob</h1>
       <p class="role" id="c-role">Creative Developer</p>
-    </div>
-    <p class="bio" id="c-bio">Делаю интерфейсы, которые оживают: motion, шейдеры, частицы и свет.</p>
-    <div class="tags">
-      <span class="tag">React</span><span class="tag">TypeScript</span>
-      <span class="tag">WebGL</span><span class="tag">Motion</span>
+      <p class="bio" id="c-bio">React · TypeScript · WebGL · Motion</p>
     </div>
   </header>
 
-  <hr class="sep" />
+  <div class="phone-row">
+    <svg class="pico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+    <a id="l-phone" href="#"></a>
+    <button class="copy" data-copy="phone" title="Скопировать номер" aria-label="Скопировать номер">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+    </button>
+  </div>
 
   <div class="actions">
     <a class="btn call" id="a-call" href="#">
@@ -247,50 +250,27 @@
     </a>
     <a class="btn revolut" id="a-rev" href="#" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20"/></svg>
-      <span>Отправить на Revolut<small>перевод в пару касаний</small></span>
+      Отправить на Revolut
     </a>
   </div>
 
-  <nav class="links">
-    <a class="link" id="l-site" href="#" target="_blank" rel="noopener">
-      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/></svg></span>
-      <span class="meta"><b>Website</b><span id="t-site">ziyodullo.com</span></span>
-      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#5f6484" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+  <nav class="socials">
+    <a class="tile site" id="l-site" href="#" target="_blank" rel="noopener" title="Website">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/></svg>
+      <b>Website</b>
     </a>
-
-    <a class="link" id="l-tg" href="#" target="_blank" rel="noopener">
-      <span class="ico tg"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-4.9 9-8.1c.4-.3-.1-.5-.6-.2L6.2 13.2 1.4 11.7c-1-.3-1-1 .2-1.5l19-7.3c.9-.3 1.6.2 1.3 1.4Z"/></svg></span>
-      <span class="meta"><b>Telegram</b><span id="t-tg"></span></span>
-      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#5f6484" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+    <a class="tile ig" id="l-ig" href="#" target="_blank" rel="noopener" title="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+      <b>Instagram</b>
     </a>
-
-    <a class="link" id="l-ig" href="#" target="_blank" rel="noopener">
-      <span class="ico ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></span>
-      <span class="meta"><b>Instagram</b><span id="t-ig"></span></span>
-      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#5f6484" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+    <a class="tile gh" id="l-gh" href="#" target="_blank" rel="noopener" title="GitHub">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg>
+      <b>GitHub</b>
     </a>
-
-    <a class="link" id="l-gh" href="#" target="_blank" rel="noopener">
-      <span class="ico gh"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg></span>
-      <span class="meta"><b>GitHub</b><span id="t-gh">@Mr-Jacoob</span></span>
-      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#5f6484" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+    <a class="tile ml" id="l-mail" href="#" title="E-mail">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="m3 7 9 6 9-6"/></svg>
+      <b>E-mail</b>
     </a>
-
-    <div class="link">
-      <span class="ico ml"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="m3 7 9 6 9-6"/></svg></span>
-      <a class="meta" id="l-mail" href="#" style="text-decoration:none;color:inherit"><b>Email</b><span id="t-mail"></span></a>
-      <button class="copy" data-copy="mail" title="Скопировать e-mail" aria-label="Скопировать e-mail">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
-      </button>
-    </div>
-
-    <div class="link">
-      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></span>
-      <a class="meta" id="l-phone" href="#" style="text-decoration:none;color:inherit"><b>Телефон</b><span id="t-phone"></span></a>
-      <button class="copy" data-copy="phone" title="Скопировать номер" aria-label="Скопировать номер">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
-      </button>
-    </div>
   </nav>
 
   <div class="foot">
@@ -317,7 +297,7 @@ const CARD = {
   name:    "Jacob",
   fullName:"Ziyodullo Rahmonjonov",   // для сохранения в контакты
   role:    "Creative Developer",
-  bio:     "Делаю интерфейсы, которые оживают: motion, шейдеры, частицы и свет.",
+  bio:     "React · TypeScript · WebGL · Motion",
 
   phoneRaw:      "+393513047421",
   phoneDisplay:  "+39 351 304 7421",
@@ -334,24 +314,24 @@ const CARD = {
 /* ═══════════════════════════════════════════════════════════ */
 
 const $ = (id) => document.getElementById(id);
-const pretty = (u) => u.replace(/^https?:\/\//,"").replace(/\/$/,"");
-const handle = (u) => "@" + pretty(u).split("/").filter(Boolean).pop();
 
 $("c-name").textContent = CARD.name;
 $("c-role").textContent = CARD.role;
 $("c-bio").textContent  = CARD.bio;
 document.title = CARD.name + " — " + CARD.role;
 
+$("l-phone").href = "tel:" + CARD.phoneRaw;
+$("l-phone").textContent = CARD.phoneDisplay;
+
 $("a-call").href = "tel:" + CARD.phoneRaw;
 $("a-tg").href   = CARD.telegram;
 $("a-rev").href  = CARD.revolut;
 
-$("l-site").href = CARD.site;         $("t-site").textContent  = pretty(CARD.site);
-$("l-tg").href   = CARD.telegram;     $("t-tg").textContent    = handle(CARD.telegram);
-$("l-ig").href   = CARD.instagram;    $("t-ig").textContent    = handle(CARD.instagram);
-$("l-gh").href   = CARD.github;       $("t-gh").textContent    = handle(CARD.github);
-$("l-mail").href = "mailto:" + CARD.email;   $("t-mail").textContent  = CARD.email;
-$("l-phone").href= "tel:" + CARD.phoneRaw;   $("t-phone").textContent = CARD.phoneDisplay;
+$("l-site").href = CARD.site;
+$("l-ig").href   = CARD.instagram;
+$("l-gh").href   = CARD.github;
+$("l-mail").href = "mailto:" + CARD.email;
+$("l-mail").title = CARD.email;
 $("year").textContent = new Date().getFullYear();
 
 /* тост */
@@ -380,11 +360,21 @@ async function copy(text, label){
 document.querySelectorAll("[data-copy]").forEach(btn => {
   btn.addEventListener("click", (e) => {
     e.preventDefault();
-    const k = btn.dataset.copy;
-    if(k === "mail") copy(CARD.email, "E-mail");
-    else copy(CARD.phoneRaw, "Номер");
+    copy(CARD.phoneRaw, "Номер");
   });
 });
+
+/* долгое нажатие на плитку E-mail копирует адрес */
+let mailTimer;
+const mail = $("l-mail");
+const startMail = () => { mailTimer = setTimeout(() => copy(CARD.email, "E-mail"), 550); };
+const stopMail  = () => clearTimeout(mailTimer);
+mail.addEventListener("touchstart", startMail, {passive:true});
+mail.addEventListener("touchend", stopMail);
+mail.addEventListener("touchmove", stopMail);
+mail.addEventListener("mousedown", startMail);
+mail.addEventListener("mouseup", stopMail);
+mail.addEventListener("mouseleave", stopMail);
 
 /* сохранить в контакты (.vcf) */
 $("btn-vcf").addEventListener("click", () => {
@@ -428,7 +418,7 @@ $("btn-share").addEventListener("click", async () => {
   copy(location.href, "Ссылка");
 });
 
-/* лёгкий 3D-наклон карточки на десктопе */
+/* лёгкий 3D-наклон на десктопе */
 const card = document.querySelector(".card");
 if(window.matchMedia("(hover:hover) and (pointer:fine)").matches &&
    !window.matchMedia("(prefers-reduced-motion:reduce)").matches){
@@ -436,7 +426,7 @@ if(window.matchMedia("(hover:hover) and (pointer:fine)").matches &&
     const r = card.getBoundingClientRect();
     const x = (e.clientX - r.left) / r.width  - .5;
     const y = (e.clientY - r.top)  / r.height - .5;
-    card.style.transform = `perspective(900px) rotateX(${(-y*4).toFixed(2)}deg) rotateY(${(x*4).toFixed(2)}deg)`;
+    card.style.transform = `perspective(900px) rotateX(${(-y*3.5).toFixed(2)}deg) rotateY(${(x*3.5).toFixed(2)}deg)`;
   });
   card.addEventListener("mouseleave", () => { card.style.transform = ""; });
 }
