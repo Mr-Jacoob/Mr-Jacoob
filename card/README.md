@@ -5,18 +5,22 @@
 
 ## Как изменить данные
 
-Все контакты уже заполнены. Если что-то поменяется — открой `index.html`,
-найди блок `const CARD = { ... }` в конце файла и поправь значение:
+Все контакты лежат **прямо в разметке** `index.html` — их видно в коде и они
+работают даже без JavaScript. Правь по `id`:
 
-| Поле | Что это |
+| Где | Что |
 |---|---|
-| `phoneRaw` / `phoneDisplay` | номер для кнопки «Позвонить» и для показа на экране |
-| `telegram` | `https://t.me/stephn_jons` |
-| `instagram` | `https://instagram.com/rahmonjonov.zdl` |
-| `revolut` | `https://revolut.me/ziyodullorahmon` |
-| `email`, `site`, `github` | почта, ziyodullo.com, @Mr-Jacoob |
+| `<a id="l-phone" href="tel:...">` и `id="a-call"` | номер телефона |
+| `id="a-tg"` | Telegram — `https://t.me/stephn_jons` |
+| `id="a-rev"` | Revolut — `https://revolut.me/ziyodullorahmon` |
+| `id="l-site"` | сайт — `https://ziyodullo.com` |
+| `id="l-ig"` | Instagram — `https://instagram.com/rahmonjonov.zdl` |
+| `id="l-gh"` | GitHub — `https://github.com/Mr-Jacoob` |
+| `id="l-mail"` | почта — `mailto:...` |
+| `data-fullname` у `<main class="card">` | имя для сохранения в контакты |
 
-Больше нигде править ничего не нужно — заголовки, иконки и ссылки подставляются сами.
+Скрипт внизу файла ничего не хранит — он читает эти же значения из разметки
+для копирования, `.vcf` и кнопки «Поделиться». Дублировать нигде не нужно.
 
 ## Что умеет
 
