@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>ziyo&amp;co — Creative Studio</title>
-<meta name="description" content="ziyo&amp;co — creative studio. Телефон, WhatsApp, Telegram, сайт, соцсети и Revolut." />
+<meta name="description" content="ziyo&amp;co — creative studio. Phone, WhatsApp, Telegram, website, socials and Revolut." />
 <meta name="theme-color" content="#14171C" />
 
 <meta property="og:type" content="profile" />
 <meta property="og:title" content="ziyo&amp;co — Creative Studio" />
-<meta property="og:description" content="Связаться, написать и отправить перевод — всё в одном месте." />
+<meta property="og:description" content="Call, message and send money — all in one place." />
 <meta property="og:url" content="https://ziyodullo.com/card/" />
 <meta property="og:image" content="https://github.com/Mr-Jacoob.png?size=460" />
 <meta name="twitter:card" content="summary" />
@@ -21,7 +21,7 @@
 
 <style>
   :root{
-    /* фирменная палитра ziyo&co */
+    /* ziyo&co brand palette */
     --ink:#14171C;
     --paper:#EDEBE7;
     --gold:#C9A227;
@@ -55,7 +55,7 @@
     overflow-x:hidden;
   }
 
-  /* ── фон ── */
+  /* ── background ── */
   .aurora{position:fixed;inset:-20vmax;z-index:-2;filter:blur(80px);opacity:.42;pointer-events:none}
   .blob{position:absolute;border-radius:50%;mix-blend-mode:screen;animation:drift 22s ease-in-out infinite}
   .b1{width:52vmax;height:52vmax;left:-8vmax;top:-6vmax;background:radial-gradient(circle at 30% 30%,#C9A227,transparent 62%)}
@@ -75,7 +75,7 @@
     -webkit-mask-image:radial-gradient(circle at 50% 40%,#000 8%,transparent 70%);
   }
 
-  /* ── карточка ── */
+  /* ── card ── */
   .card{
     width:100%;max-width:380px;
     background:var(--card);
@@ -96,7 +96,7 @@
   }
   @keyframes rise{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
 
-  /* ── шапка: аватар слева, текст справа ── */
+  /* ── header: logo left, text right ── */
   .head{display:flex;align-items:center;gap:13px}
   .avatar-wrap{position:relative;width:60px;height:60px;flex:none}
   .avatar-wrap::after{
@@ -119,7 +119,7 @@
   }
   .bio{margin:5px 0 0;font-size:11px;line-height:1.4;color:var(--muted);letter-spacing:.01em}
 
-  /* ── строка с телефоном ── */
+  /* ── phone row ── */
   .phone-row{
     display:flex;align-items:center;gap:8px;margin-top:12px;
     padding:9px 12px;border-radius:13px;
@@ -138,7 +138,7 @@
   .copy:hover{color:var(--text);background:rgba(255,255,255,.08)}
   .copy svg{width:15px;height:15px;display:block}
 
-  /* ── главные кнопки ── */
+  /* ── primary buttons ── */
   .actions{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:8px}
   .btn{
     display:flex;align-items:center;justify-content:center;gap:7px;
@@ -158,7 +158,7 @@
     border-color:transparent;color:var(--ink);box-shadow:0 10px 26px -16px rgba(237,235,231,.5);
   }
 
-  /* ── соцсети: плитки ── */
+  /* ── social tiles ── */
   .socials{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
   .tile{
     display:flex;flex-direction:column;align-items:center;gap:5px;
@@ -174,7 +174,7 @@
   .tile:hover svg{color:var(--gold);opacity:1}
   .tile b{text-transform:uppercase;letter-spacing:.1em}
 
-  /* ── низ ── */
+  /* ── footer ── */
   .foot{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
   .ghost{
     display:flex;align-items:center;justify-content:center;gap:6px;font-family:inherit;
@@ -186,7 +186,7 @@
   .ghost svg{width:14px;height:14px}
   .sig{margin:11px 0 0;text-align:center;font-size:9px;color:var(--muted);opacity:.6;text-transform:uppercase;letter-spacing:.14em}
 
-  /* ── тост ── */
+  /* ── toast ── */
   .toast{
     position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));transform:translate(-50%,20px);
     background:rgba(20,23,28,.96);border:1px solid var(--stroke-2);color:var(--text);
@@ -196,7 +196,7 @@
   }
   .toast.show{opacity:1;transform:translate(-50%,0)}
 
-  /* ── совсем низкие экраны: убираем лишнее ── */
+  /* ── very short screens: drop the extras ── */
   @media (max-height:620px){
     .bio{display:none}
     .sig{display:none}
@@ -248,7 +248,7 @@
   <div class="phone-row">
     <svg class="pico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
     <a id="l-phone" href="tel:+393513047421">+39 351 304 7421</a>
-    <button class="copy" data-copy="phone" title="Скопировать номер" aria-label="Скопировать номер">
+    <button class="copy" data-copy="phone" title="Copy number" aria-label="Copy number">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
     </button>
   </div>
@@ -256,7 +256,7 @@
   <div class="actions">
     <a class="btn call" id="a-call" href="tel:+393513047421">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
-      Звонок
+      Call
     </a>
     <a class="btn wa" id="a-wa" href="https://wa.me/393513047421" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.8.8-1 1.9-.6 3.1.4 1.2 1.2 2.3 1.4 2.5.2.2 2 3.1 5 4.1 1.9.7 2.6.7 3.5.6.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
@@ -268,7 +268,7 @@
     </a>
     <a class="btn revolut" id="a-rev" href="https://revolut.me/ziyodullorahmon" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20"/></svg>
-      Отправить на Revolut
+      Send via Revolut
     </a>
   </div>
 
@@ -294,11 +294,11 @@
   <div class="foot">
     <button class="ghost" id="btn-vcf">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-      В контакты
+      Save contact
     </button>
     <button class="ghost" id="btn-share">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>
-      Поделиться
+      Share
     </button>
   </div>
 
@@ -309,14 +309,14 @@
 
 <script>
 /* ═══════════════════════════════════════════════════════════
-   ДАННЫЕ ВИЗИТКИ ЖИВУТ В HTML ВЫШЕ — правь прямо в разметке:
-     • телефон  — <a id="l-phone" href="tel:...">   и кнопка id="a-call"
-     • WhatsApp — id="a-wa"      • Telegram — id="a-tg"
+   ALL CONTACT DETAILS LIVE IN THE MARKUP ABOVE — edit them there:
+     • phone    — <a id="l-phone" href="tel:..."> and the id="a-call" button
+     • WhatsApp — id="a-wa"      • Telegram  — id="a-tg"
      • Revolut  — id="a-rev"
-     • сайт     — id="l-site"    • Instagram — id="l-ig"
-     • GitHub   — id="l-gh"      • E-mail   — id="l-mail"
-     • название и имя для контактов — data-brand / data-person у <main>
-   Скрипт ниже просто читает их отсюда — дублировать нигде не нужно.
+     • website  — id="l-site"    • Instagram — id="l-ig"
+     • GitHub   — id="l-gh"      • E-mail    — id="l-mail"
+     • brand name and contact name — data-brand / data-person on <main>
+   The script below only reads them back — nothing is duplicated here.
    ═══════════════════════════════════════════════════════════ */
 
 const $ = (id) => document.getElementById(id);
@@ -340,7 +340,7 @@ const CARD = {
 
 $("year").textContent = new Date().getFullYear();
 
-/* тост */
+/* toast */
 let toastTimer;
 function toast(msg){
   const t = $("toast");
@@ -350,7 +350,7 @@ function toast(msg){
   toastTimer = setTimeout(() => t.classList.remove("show"), 1900);
 }
 
-/* копирование */
+/* copy to clipboard */
 async function copy(text, label){
   try{
     await navigator.clipboard.writeText(text);
@@ -361,19 +361,19 @@ async function copy(text, label){
     try{ document.execCommand("copy"); }catch{}
     ta.remove();
   }
-  toast(label + " скопирован");
+  toast(label + " copied");
 }
 document.querySelectorAll("[data-copy]").forEach(btn => {
   btn.addEventListener("click", (e) => {
     e.preventDefault();
-    copy(CARD.phoneRaw, "Номер");
+    copy(CARD.phoneRaw, "Number");
   });
 });
 
-/* долгое нажатие на плитку E-mail копирует адрес */
+/* long-press the e-mail tile to copy the address */
 let mailTimer;
 const mail = $("l-mail");
-const startMail = () => { mailTimer = setTimeout(() => copy(CARD.email, "E-mail"), 550); };
+const startMail = () => { mailTimer = setTimeout(() => copy(CARD.email, "Email"), 550); };
 const stopMail  = () => clearTimeout(mailTimer);
 mail.addEventListener("touchstart", startMail, {passive:true});
 mail.addEventListener("touchend", stopMail);
@@ -382,7 +382,7 @@ mail.addEventListener("mousedown", startMail);
 mail.addEventListener("mouseup", stopMail);
 mail.addEventListener("mouseleave", stopMail);
 
-/* сохранить в контакты (.vcf) */
+/* save to contacts (.vcf) */
 $("btn-vcf").addEventListener("click", () => {
   const parts = CARD.person.trim().split(/\s+/);
   const last  = parts.length > 1 ? parts.pop() : "";
@@ -410,23 +410,23 @@ $("btn-vcf").addEventListener("click", () => {
   a.download = CARD.person.replace(/\s+/g,"-").toLowerCase() + ".vcf";
   document.body.appendChild(a); a.click(); a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
-  toast("Контакт скачан");
+  toast("Contact saved");
 });
 
-/* поделиться */
+/* share */
 $("btn-share").addEventListener("click", async () => {
   const data = {
     title: CARD.name + " — " + CARD.role,
-    text:  "Моя визитка",
+    text:  "My card",
     url:   location.href
   };
   if(navigator.share){
     try{ await navigator.share(data); return; }catch{ return; }
   }
-  copy(location.href, "Ссылка");
+  copy(location.href, "Link");
 });
 
-/* лёгкий 3D-наклон на десктопе */
+/* subtle 3D tilt on desktop */
 if(window.matchMedia("(hover:hover) and (pointer:fine)").matches &&
    !window.matchMedia("(prefers-reduced-motion:reduce)").matches){
   card.addEventListener("mousemove", (e) => {
