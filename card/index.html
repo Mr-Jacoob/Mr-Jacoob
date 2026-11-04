@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Ziyo &amp; Co — Creative Studio</title>
-<meta name="description" content="Ziyo &amp; Co — creative studio. Телефон, WhatsApp, Telegram, сайт, соцсети и Revolut." />
-<meta name="theme-color" content="#0b0c16" />
+<title>ziyo&amp;co — Creative Studio</title>
+<meta name="description" content="ziyo&amp;co — creative studio. Телефон, WhatsApp, Telegram, сайт, соцсети и Revolut." />
+<meta name="theme-color" content="#14171C" />
 
 <meta property="og:type" content="profile" />
-<meta property="og:title" content="Ziyo &amp; Co — Creative Studio" />
+<meta property="og:title" content="ziyo&amp;co — Creative Studio" />
 <meta property="og:description" content="Связаться, написать и отправить перевод — всё в одном месте." />
 <meta property="og:url" content="https://ziyodullo.com/card/" />
 <meta property="og:image" content="https://github.com/Mr-Jacoob.png?size=460" />
@@ -17,20 +17,26 @@
 <link rel="icon" href="https://github.com/Mr-Jacoob.png?size=64" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
 <style>
   :root{
-    --bg:#0b0c16;
-    --card:rgba(22,24,40,.62);
-    --stroke:rgba(255,255,255,.09);
-    --stroke-2:rgba(255,255,255,.16);
-    --text:#e9e9f4;
-    --muted:#9aa0bd;
-    --accent:#a78bfa;
-    --accent-2:#7dd3fc;
+    /* фирменная палитра ziyo&co */
+    --ink:#14171C;
+    --paper:#EDEBE7;
+    --gold:#C9A227;
+    --light:#F5F3EF;
+
+    --bg:var(--ink);
+    --card:rgba(30,34,41,.66);
+    --stroke:rgba(245,243,239,.10);
+    --stroke-2:rgba(245,243,239,.18);
+    --text:var(--light);
+    --muted:rgba(245,243,239,.52);
+    --accent:var(--gold);
+    --accent-2:#E3C45C;
     --radius:20px;
-    --shadow:0 26px 70px -30px rgba(0,0,0,.9);
+    --shadow:0 26px 70px -30px rgba(0,0,0,.95);
   }
 
   *{box-sizing:border-box}
@@ -40,7 +46,7 @@
     min-height:100svh;
     background:var(--bg);
     color:var(--text);
-    font-family:"Sora",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    font-family:"Outfit",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
     -webkit-font-smoothing:antialiased;
     display:flex;
     align-items:center;
@@ -50,11 +56,11 @@
   }
 
   /* ── фон ── */
-  .aurora{position:fixed;inset:-20vmax;z-index:-2;filter:blur(70px);opacity:.7;pointer-events:none}
+  .aurora{position:fixed;inset:-20vmax;z-index:-2;filter:blur(80px);opacity:.42;pointer-events:none}
   .blob{position:absolute;border-radius:50%;mix-blend-mode:screen;animation:drift 22s ease-in-out infinite}
-  .b1{width:52vmax;height:52vmax;left:-8vmax;top:-6vmax;background:radial-gradient(circle at 30% 30%,#7c3aed,transparent 62%)}
-  .b2{width:46vmax;height:46vmax;right:-10vmax;top:6vmax;background:radial-gradient(circle at 60% 40%,#0ea5e9,transparent 62%);animation-delay:-7s}
-  .b3{width:44vmax;height:44vmax;left:18vmax;bottom:-16vmax;background:radial-gradient(circle at 50% 50%,#ec4899,transparent 62%);animation-delay:-13s}
+  .b1{width:52vmax;height:52vmax;left:-8vmax;top:-6vmax;background:radial-gradient(circle at 30% 30%,#C9A227,transparent 62%)}
+  .b2{width:46vmax;height:46vmax;right:-10vmax;top:6vmax;background:radial-gradient(circle at 60% 40%,#6E5A18,transparent 62%);animation-delay:-7s}
+  .b3{width:44vmax;height:44vmax;left:18vmax;bottom:-16vmax;background:radial-gradient(circle at 50% 50%,#3A4150,transparent 62%);animation-delay:-13s}
   @keyframes drift{
     0%,100%{transform:translate3d(0,0,0) scale(1)}
     33%{transform:translate3d(6vmax,-4vmax,0) scale(1.12)}
@@ -62,8 +68,8 @@
   }
   .grid{
     position:fixed;inset:0;z-index:-1;pointer-events:none;
-    background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
-                     linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+    background-image:linear-gradient(rgba(237,235,231,.04) 1px,transparent 1px),
+                     linear-gradient(90deg,rgba(237,235,231,.04) 1px,transparent 1px);
     background-size:44px 44px;
     mask-image:radial-gradient(circle at 50% 40%,#000 8%,transparent 70%);
     -webkit-mask-image:radial-gradient(circle at 50% 40%,#000 8%,transparent 70%);
@@ -84,7 +90,7 @@
   }
   .card::before{
     content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;
-    background:linear-gradient(140deg,rgba(167,139,250,.55),transparent 40%,transparent 60%,rgba(125,211,252,.45));
+    background:linear-gradient(140deg,rgba(201,162,39,.65),transparent 38%,transparent 62%,rgba(237,235,231,.28));
     -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
     -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;
   }
@@ -95,33 +101,29 @@
   .avatar-wrap{position:relative;width:60px;height:60px;flex:none}
   .avatar-wrap::after{
     content:"";position:absolute;inset:-4px;border-radius:50%;
-    background:conic-gradient(from 0deg,var(--accent),var(--accent-2),#ec4899,var(--accent));
+    background:conic-gradient(from 0deg,#8A6E1F,var(--gold),#F0DB95,var(--gold),#8A6E1F);
     animation:spin 6s linear infinite;z-index:0;filter:blur(5px);opacity:.85;
   }
   @keyframes spin{to{transform:rotate(360deg)}}
   .avatar{
     position:relative;z-index:1;width:60px;height:60px;border-radius:50%;
-    object-fit:cover;border:2px solid #12131f;background:#12131f;display:block;
+    object-fit:cover;border:2px solid var(--ink);background:var(--ink);display:block;
   }
   .status{
     position:absolute;z-index:2;right:0;bottom:0;
-    width:14px;height:14px;border-radius:50%;background:#34d399;border:2px solid #12131f;
-    box-shadow:0 0 0 0 rgba(52,211,153,.6);animation:pulse 2.2s infinite;
+    width:14px;height:14px;border-radius:50%;background:var(--gold);border:2px solid var(--ink);
+    box-shadow:0 0 0 0 rgba(201,162,39,.6);animation:pulse 2.2s infinite;
   }
-  @keyframes pulse{70%{box-shadow:0 0 0 9px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+  @keyframes pulse{70%{box-shadow:0 0 0 9px rgba(201,162,39,0)}100%{box-shadow:0 0 0 0 rgba(201,162,39,0)}}
 
   .id{min-width:0}
-  h1{margin:0;font-size:20px;line-height:1.15;letter-spacing:-.02em;font-weight:700}
-  h1 .amp{
-    background:linear-gradient(135deg,var(--accent),var(--accent-2));
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-    font-family:"JetBrains Mono",monospace;font-weight:400;
-  }
+  h1{margin:0;font-size:22px;line-height:1.1;letter-spacing:-.01em;font-weight:500}
+  h1 .amp{color:var(--gold);font-weight:300}
   .role{
-    margin:2px 0 0;font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11.5px;
-    color:var(--accent);
+    margin:4px 0 0;font-size:9.5px;font-weight:500;
+    text-transform:uppercase;letter-spacing:.18em;color:var(--gold);
   }
-  .bio{margin:4px 0 0;font-size:11.5px;line-height:1.4;color:var(--muted)}
+  .bio{margin:5px 0 0;font-size:11px;line-height:1.4;color:var(--muted);letter-spacing:.01em}
 
   /* ── строка с телефоном ── */
   .phone-row{
@@ -154,11 +156,12 @@
   .btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.28)}
   .btn:active{transform:translateY(0)}
   .btn svg{width:16px;height:16px;flex:none}
-  .btn.call{background:linear-gradient(135deg,#7c3aed,#a78bfa);border-color:transparent;color:#fff;box-shadow:0 10px 24px -14px #7c3aed}
-  .btn.wa{background:linear-gradient(135deg,#128C7E,#25D366);border-color:transparent;color:#fff;box-shadow:0 10px 24px -14px #25D366}
+  .btn.call{background:linear-gradient(135deg,#C9A227,#E0BE4F);border-color:transparent;color:var(--ink);box-shadow:0 10px 26px -14px #C9A227}
+  .btn.wa svg{color:#25D366}
+  #a-tg svg{color:#5FB0E4}
   .btn.revolut{
-    grid-column:1 / -1;background:linear-gradient(135deg,#0b5bd3,#2b7fff);
-    border-color:transparent;color:#fff;box-shadow:0 10px 26px -14px #1f6fff;
+    grid-column:1 / -1;background:linear-gradient(135deg,var(--light),var(--paper));
+    border-color:transparent;color:var(--ink);box-shadow:0 10px 26px -16px rgba(237,235,231,.5);
   }
 
   /* ── соцсети: плитки ── */
@@ -173,10 +176,9 @@
   .tile:hover{transform:translateY(-2px);background:rgba(255,255,255,.085);border-color:var(--stroke-2)}
   .tile svg{width:19px;height:19px}
   .tile b{font-size:9.5px;font-weight:500;color:var(--muted);letter-spacing:.01em}
-  .tile.site svg{color:var(--accent)}
-  .tile.ig svg{color:#f472b6}
-  .tile.gh svg{color:#e9e9f4}
-  .tile.ml svg{color:#34d399}
+  .tile svg{color:var(--light);opacity:.78;transition:color .16s ease,opacity .16s ease}
+  .tile:hover svg{color:var(--gold);opacity:1}
+  .tile b{text-transform:uppercase;letter-spacing:.1em}
 
   /* ── низ ── */
   .foot{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
@@ -188,12 +190,12 @@
   }
   .ghost:hover{color:var(--text);border-color:rgba(255,255,255,.32);background:rgba(255,255,255,.04)}
   .ghost svg{width:14px;height:14px}
-  .sig{margin:11px 0 0;text-align:center;font-size:10px;color:#5f6484;font-family:"JetBrains Mono",monospace}
+  .sig{margin:11px 0 0;text-align:center;font-size:9px;color:var(--muted);opacity:.6;text-transform:uppercase;letter-spacing:.14em}
 
   /* ── тост ── */
   .toast{
     position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));transform:translate(-50%,20px);
-    background:rgba(20,22,36,.95);border:1px solid var(--stroke-2);color:var(--text);
+    background:rgba(20,23,28,.96);border:1px solid var(--stroke-2);color:var(--text);
     padding:9px 16px;border-radius:999px;font-size:12.5px;font-weight:600;
     box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.28s ease;z-index:50;
     backdrop-filter:blur(10px);
@@ -226,15 +228,15 @@
 <div class="grid" aria-hidden="true"></div>
 
 <main class="card"
-      data-brand="Ziyo &amp; Co"
+      data-brand="ziyo&amp;co"
       data-person="Ziyodullo Rahmonjonov">
   <header class="head">
     <div class="avatar-wrap">
-      <img class="avatar" src="https://github.com/Mr-Jacoob.png?size=160" alt="Ziyo &amp; Co" />
+      <img class="avatar" src="https://github.com/Mr-Jacoob.png?size=160" alt="ziyo&amp;co" />
       <span class="status" title="Открыт к проектам"></span>
     </div>
     <div class="id">
-      <h1 id="c-name">Ziyo <span class="amp">&amp;</span> Co</h1>
+      <h1 id="c-name">ziyo<span class="amp">&amp;</span>co</h1>
       <p class="role" id="c-role">Creative Studio</p>
       <p class="bio" id="c-bio">React · TypeScript · WebGL · Motion</p>
     </div>
@@ -297,7 +299,7 @@
     </button>
   </div>
 
-  <p class="sig">© <span id="year">2026</span> Ziyo &amp; Co · built with ✦ code</p>
+  <p class="sig">© <span id="year">2026</span> ziyo&amp;co</p>
 </main>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
