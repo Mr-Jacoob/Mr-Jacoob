@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Jacob — Creative Developer</title>
-<meta name="description" content="Цифровая визитка Jacob (Ziyodullo Rahmonjonov) — creative developer. Телефон, сайт, соцсети и Revolut." />
+<title>Ziyo &amp; Co — Creative Studio</title>
+<meta name="description" content="Ziyo &amp; Co — creative studio. Телефон, WhatsApp, Telegram, сайт, соцсети и Revolut." />
 <meta name="theme-color" content="#0b0c16" />
 
 <meta property="og:type" content="profile" />
-<meta property="og:title" content="Jacob — Creative Developer" />
-<meta property="og:description" content="Телефон, сайт, соцсети и Revolut — всё в одном месте." />
+<meta property="og:title" content="Ziyo &amp; Co — Creative Studio" />
+<meta property="og:description" content="Связаться, написать и отправить перевод — всё в одном месте." />
 <meta property="og:url" content="https://ziyodullo.com/card/" />
 <meta property="og:image" content="https://github.com/Mr-Jacoob.png?size=460" />
 <meta name="twitter:card" content="summary" />
@@ -112,6 +112,11 @@
 
   .id{min-width:0}
   h1{margin:0;font-size:20px;line-height:1.15;letter-spacing:-.02em;font-weight:700}
+  h1 .amp{
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    font-family:"JetBrains Mono",monospace;font-weight:400;
+  }
   .role{
     margin:2px 0 0;font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11.5px;
     color:var(--accent);
@@ -221,16 +226,16 @@
 <div class="grid" aria-hidden="true"></div>
 
 <main class="card"
-      data-fullname="Ziyodullo Rahmonjonov"
-     >
+      data-brand="Ziyo &amp; Co"
+      data-person="Ziyodullo Rahmonjonov">
   <header class="head">
     <div class="avatar-wrap">
-      <img class="avatar" src="https://github.com/Mr-Jacoob.png?size=160" alt="Jacob" />
+      <img class="avatar" src="https://github.com/Mr-Jacoob.png?size=160" alt="Ziyo &amp; Co" />
       <span class="status" title="Открыт к проектам"></span>
     </div>
     <div class="id">
-      <h1 id="c-name">Jacob</h1>
-      <p class="role" id="c-role">Creative Developer</p>
+      <h1 id="c-name">Ziyo <span class="amp">&amp;</span> Co</h1>
+      <p class="role" id="c-role">Creative Studio</p>
       <p class="bio" id="c-bio">React · TypeScript · WebGL · Motion</p>
     </div>
   </header>
@@ -292,7 +297,7 @@
     </button>
   </div>
 
-  <p class="sig">© <span id="year">2026</span> Jacob · built with ✦ code</p>
+  <p class="sig">© <span id="year">2026</span> Ziyo &amp; Co · built with ✦ code</p>
 </main>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -305,7 +310,7 @@
      • Revolut  — id="a-rev"
      • сайт     — id="l-site"    • Instagram — id="l-ig"
      • GitHub   — id="l-gh"      • E-mail   — id="l-mail"
-     • имя для контактов — атрибут data-fullname у <main class="card">
+     • название и имя для контактов — data-brand / data-person у <main>
    Скрипт ниже просто читает их отсюда — дублировать нигде не нужно.
    ═══════════════════════════════════════════════════════════ */
 
@@ -314,8 +319,8 @@ const card = document.querySelector(".card");
 const strip = (el, prefix) => el.getAttribute("href").replace(prefix, "");
 
 const CARD = {
-  name:         $("c-name").textContent.trim(),
-  fullName:     card.dataset.fullname,
+  name:         card.dataset.brand,
+  person:       card.dataset.person,
   role:         $("c-role").textContent.trim(),
   phoneRaw:     strip($("l-phone"), "tel:"),
   phoneDisplay: $("l-phone").textContent.trim(),
@@ -374,13 +379,14 @@ mail.addEventListener("mouseleave", stopMail);
 
 /* сохранить в контакты (.vcf) */
 $("btn-vcf").addEventListener("click", () => {
-  const parts = CARD.fullName.trim().split(/\s+/);
+  const parts = CARD.person.trim().split(/\s+/);
   const last  = parts.length > 1 ? parts.pop() : "";
   const first = parts.join(" ");
   const vcf = [
     "BEGIN:VCARD","VERSION:3.0",
     "N:" + last + ";" + first + ";;;",
-    "FN:" + CARD.fullName,
+    "FN:" + CARD.person,
+    "ORG:" + CARD.name,
     "TITLE:" + CARD.role,
     "TEL;TYPE=CELL:" + CARD.phoneRaw,
     "EMAIL;TYPE=INTERNET:" + CARD.email,
@@ -396,7 +402,7 @@ $("btn-vcf").addEventListener("click", () => {
   const url = URL.createObjectURL(new Blob([vcf], {type:"text/vcard;charset=utf-8"}));
   const a = document.createElement("a");
   a.href = url;
-  a.download = CARD.fullName.replace(/\s+/g,"-").toLowerCase() + ".vcf";
+  a.download = CARD.person.replace(/\s+/g,"-").toLowerCase() + ".vcf";
   document.body.appendChild(a); a.click(); a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
   toast("Контакт скачан");
